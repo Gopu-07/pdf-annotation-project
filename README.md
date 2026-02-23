@@ -1,202 +1,70 @@
-# 📄 PDF Extraction & Annotation Pipeline
+# Getting Started with Create React App
 
-A full-stack system for extracting structured regions from PDFs and enabling human review through an interactive dashboard.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project consists of:
+## Available Scripts
 
-* 🧠 **FastAPI Backend** — Extracts text regions with bounding boxes from PDFs
-* 🖥️ **React Frontend** — Visual dashboard to review and correct extracted regions
-* 📦 **Sample Data** — PDFs for testing the full pipeline
+In the project directory, you can run:
 
----
+### `npm start`
 
-## 🚀 Features
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Backend (FastAPI)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-* Upload PDF files
-* Detect text regions with bounding boxes
-* Extract text from each region
-* Return structured JSON output
-* Supports multi-page documents
+### `npm test`
 
-### Frontend (React)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* Render PDF pages
-* Overlay bounding boxes on detected regions
-* Click to select regions
-* Side panel for reviewing extracted text
-* Edit text and labels
-* Highlight low-confidence regions
+### `npm run build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🏗️ Project Structure
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-pdf-annotation-project/
- ├── Backend/
- │    ├── main.py
- │    └── requirements.txt
- │
- ├── Frontend/
- │    ├── package.json
- │    ├── public/
- │    └── src/
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
----
+### `npm run eject`
 
-## ⚙️ Setup Instructions
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 🔧 Backend Setup (FastAPI)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. Navigate to backend folder:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```
-cd Backend
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-2. Install dependencies:
+## Learn More
 
-```
-pip install -r requirements.txt
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-3. Run the server:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```
-python3 -m uvicorn main:app --reload
-```
+### Code Splitting
 
-Backend will start at:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-```
-http://127.0.0.1:8000
-```
+### Analyzing the Bundle Size
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### 🖥️ Frontend Setup (React)
+### Making a Progressive Web App
 
-1. Navigate to frontend folder:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```
-cd Frontend
-```
+### Advanced Configuration
 
-2. Install dependencies:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-```
-npm install
-```
+### Deployment
 
-3. Start the React app:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-```
-npm start
-```
+### `npm run build` fails to minify
 
-Frontend will open at:
-
-```
-http://localhost:3000
-```
-
----
-
-## 📤 API Endpoint
-
-### POST `/extract`
-
-Upload a PDF file and receive extracted regions.
-
-**Request:**
-Multipart form-data with file field:
-
-```
-file: <PDF file>
-```
-
-**Response Example:**
-
-```json
-{
-  "pages": [
-    {
-      "page": 1,
-      "regions": [
-        {
-          "bbox": [x1, y1, x2, y2],
-          "text": "Sample text",
-          "label": "paragraph",
-          "confidence": 0.92
-        }
-      ]
-    }
-  ]
-}
-```
-
----
-
-## 🧪 Sample Data
-
-Sample PDFs are included in the `sample-data` folder to test the pipeline end-to-end.
-
----
-
-## 🖱️ Dashboard Usage
-
-1. Upload a PDF from the frontend
-2. View detected regions on each page
-3. Click a bounding box to inspect details
-4. Edit extracted text or label
-5. Flag incorrect regions for review
-
----
-
-## 🛠️ Technologies Used
-
-### Backend
-
-* FastAPI
-* PyMuPDF (fitz)
-* Uvicorn
-
-### Frontend
-
-* React
-* Axios
-* PDF rendering libraries
-
----
-
-## 🎯 Evaluation Goals
-
-This project demonstrates:
-
-* Automated PDF content extraction
-* Structured data generation
-* Human-in-the-loop validation workflow
-* Fast and intuitive annotation UI
-
----
-
-## 📌 Notes
-
-* Bounding boxes are generated using text block detection.
-* Confidence values are simulated for demonstration.
-* The system can be extended with ML-based layout models.
-
----
-
-## 👤 Author
-
-**Padmalochan Sahu**
-
----
-
-## 📜 License
-
-For evaluation purposes only.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
